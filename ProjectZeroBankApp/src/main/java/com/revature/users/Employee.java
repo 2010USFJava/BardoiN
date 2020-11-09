@@ -21,7 +21,7 @@ public class Employee implements Serializable{
 		EmployeeFile.empMap.put(username,password);
 		FileStuff.writeEmployeeFile(EmployeeFile.empMap);
 		System.out.println("New employee created.");
-		LogThis.LogIt("info", "New employee created.");
+		LogThis.LogIt("info", "New employee '" + this.getUsername() + "' created.");
 	}
 	
 	public Employee(String username, String password) {
@@ -31,7 +31,7 @@ public class Employee implements Serializable{
 		EmployeeFile.empMap.put(username,password);
 		FileStuff.writeEmployeeFile(EmployeeFile.empMap);
 		System.out.println("New employee created.");
-		LogThis.LogIt("info", "New employee created.");
+		LogThis.LogIt("info", "New employee '" + this.getUsername() + "' created.");
 	}
 	
 	public String getUsername() {

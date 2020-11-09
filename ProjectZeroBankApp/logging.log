@@ -1,9 +1,19 @@
-
-[INFO ] 2020-11-09 12:00:05.713 [main] LogThis - New customer account added.
-[INFO ] 2020-11-09 12:00:05.725 [main] LogThis - A new account has been added.
-[INFO ] 2020-11-09 12:00:05.727 [main] LogThis - New employee created.
-[INFO ] 2020-11-09 12:00:05.730 [main] LogThis - New admin created.
-[INFO ] 2020-11-09 12:00:08.154 [main] LogThis - New customer account added.
-[INFO ] 2020-11-09 12:00:08.158 [main] LogThis - A new account has been added.
-[INFO ] 2020-11-09 12:00:08.160 [main] LogThis - New employee created.
-[INFO ] 2020-11-09 12:00:08.161 [main] LogThis - New admin created.
+[INFO ] 2020-11-09 14:14:01.545 [main] LogThis - New customer 'user' account added.
+[INFO ] 2020-11-09 14:14:01.570 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 14:14:01.574 [main] LogThis - New employee 'employee' created.
+[INFO ] 2020-11-09 14:14:01.579 [main] LogThis - New admin 'admin' created.
+[INFO ] 2020-11-09 14:14:06.553 [main] LogThis - New customer 'user' account added.
+[INFO ] 2020-11-09 14:14:06.557 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 14:14:06.559 [main] LogThis - New employee 'employee' created.
+[INFO ] 2020-11-09 14:14:06.560 [main] LogThis - New admin 'admin' created.
+[INFO ] 2020-11-09 14:18:52.022 [main] LogThis - New customer 'nwalker' account added.
+[INFO ] 2020-11-09 14:19:24.884 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 14:19:24.887 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-09 14:20:45.592 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 14:20:45.594 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-09 14:21:50.184 [main] LogThis - New customer 'user' account added.
+[INFO ] 2020-11-09 14:21:50.188 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 14:21:50.189 [main] LogThis - New employee 'employee' created.
+[INFO ] 2020-11-09 14:21:50.191 [main] LogThis - New admin 'admin' created.
+[INFO ] 2020-11-09 14:22:04.465 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 14:22:04.468 [main] LogThis - An account was applied for.

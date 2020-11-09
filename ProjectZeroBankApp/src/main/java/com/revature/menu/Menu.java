@@ -29,6 +29,7 @@ public class Menu {
 				+ "\n2) Customer login"
 				+ "\n3) Employee login"
 				+ "\n4) Admin login"
+				+ "\n"
 				+ "\n0) Exit");
 		option = Integer.parseInt(sc.nextLine());
 		
@@ -45,7 +46,7 @@ public class Menu {
 		case 4: //admin login
 			adminLogin();
 			break;
-		case 0: //Exit
+		case 0: //exit
 			System.out.println("Thank you for stopping by Byte Bank. Have a good day!"
 					+ "\n"
 					+ "\n You are being redirected to the main menu.");
@@ -142,6 +143,7 @@ public class Menu {
 				+ "\n3) Deposit"
 				+ "\n4) Withdraw"
 				+ "\n5) Transfer Funds"
+				+ "\n"
 				+ "\n0) Exit");
 		
 		option = Integer.parseInt(sc.nextLine());
@@ -167,7 +169,7 @@ public class Menu {
 			AccountManager.transfer(cust);
 			customerMenu(cust, acct);
 			break;
-		case 0://Exit
+		case 0://exit
 			System.out.println("Thank you for stopping by Byte Bank. Have a good day!"
 					+ "\n"
 					+ "\n You are being redirected to the main menu.");
@@ -199,11 +201,12 @@ public class Menu {
 		System.out.println("Please select one of the options displayed below"
 				+ "\n1) Approve or Deny Accounts"
 				+ "\n2) Customer Assistance"
+				+ "\n"
 				+ "\n0) Exit");
 		option = Integer.parseInt(sc.nextLine());
 		switch(option) {
 		case 1://approve/deny accounts
-			approveOrDeny(username);
+			approveDeny(username);
 			break;
 		case 2://assist customer
 			System.out.println("Please enter the customer's username.");
@@ -213,24 +216,25 @@ public class Menu {
 			System.out.println("Please select one of the options displayed below."
 					+ "\n1) View Account Information"
 					+ "\n2) View Customer Information"
+					+ "\n"
 					+ "\n0) Exit");
 			int option2 = Integer.parseInt(sc.nextLine());
 			switch(option2) {
-			case 1://view acct info
+			case 1://view account info
 				for(int i = 0; i < CustomerFile.acctList.size(); i++) {
 					AccountManager acct1 = CustomerFile.acctList.get(i);
 						System.out.println("\n["+(i+1)+"]" + acct1);
 					}
-				System.out.println("Press any key to return.");
+				System.out.println("Press enter to return.");
 				sc.nextLine();
 				employeeMenu(username);
 				break;
-			case 2://view cust info
+			case 2://view customer info
 				for(int i = 0; i < CustomerFile.custList.size(); i++) {
 					Customer acct1 = CustomerFile.custList.get(i);
 						System.out.println("\n["+(i+1)+"]" + acct1);
 					}
-				System.out.println("Press any key to return.");
+				System.out.println("Press enter to return.");
 				sc.nextLine();
 				employeeMenu(username);
 				break;
@@ -274,20 +278,22 @@ public class Menu {
 				+ "\n1) Approve or Deny Accounts"
 				+ "\n2) Manage Employee Accounts"
 				+ "\n3) Manage Customer Accounts"
+				+ "\n"
 				+ "\n0) Exit");
 		option = Integer.parseInt(sc.nextLine());
 		switch(option) {
-		case 1://approve/deny acct
-			approveOrDeny(username);
+		case 1://approve/deny account
+			approveDeny(username);
 			break;
 		case 2://employee management
 			System.out.println("Please select one of the options displayed below."
-					+ "\n1) View All Employee Logins"
-					+ "\n2) Add New Employee Logins"
-					+ "\n3) Delete Employee Login"
-					+ "\n4) View All Admin Logins"
-					+ "\n5) Add New Admin Login"
-					+ "\n6) Delete Admin Login"
+					+ "\n1) View All Employees"
+					+ "\n2) Add New Employee"
+					+ "\n3) Delete Employee"
+					+ "\n4) View All Admins"
+					+ "\n5) Add New Admin"
+					+ "\n6) Delete Admin"
+					+ "\n"
 					+ "\n0) Exit");
 			int option2 = Integer.parseInt(sc.nextLine());
 			switch(option2) {
@@ -319,12 +325,12 @@ public class Menu {
 					adminMenu(username);
 				}
 				break;
-			case 4://view admins
+			case 4://view all admins
 				System.out.println("Admin usernames and passwords:");
 				System.out.println(AdminFile.adMap);
 				adminMenu(username);
 				break;
-			case 5://add admin
+			case 5://add new admin
 				System.out.println("Enter the new admin's username:");
 				String adminUser = sc.nextLine();
 				System.out.println("Enter the new admin's password:");
@@ -355,7 +361,7 @@ public class Menu {
 				adminMenu(username);
 			}
 			break;
-		case 3://cust mgmt
+		case 3://customer management menu
 			System.out.println("Please enter the customer's username.");
 			String custUser = sc.nextLine();
 			Customer cust = CustomerFile.findCustByUser(custUser);
@@ -365,22 +371,26 @@ public class Menu {
 					+ "\n2) View Customer Information"
 					+ "\n3) Customer Transaction"
 					+ "\n4) Cancel Customer Account"
+					+ "\n"
 					+ "\n0) Exit");
 			int option3 = Integer.parseInt(sc.nextLine());
 			switch(option3) {
-			case 1://view acct info
+			case 1://view account info
 				CustomerFile.findAcctsByUser(custUser);
-				System.out.println("Press any key to return.");
+				System.out.println("Press enter to return.");
 				sc.nextLine();
 				adminMenu(username);
 				break;
-			case 2://view cust info
-				cust.toString();
-				System.out.println("Press any key to return.");
+			case 2://view customer info
+				for(int i = 0; i < CustomerFile.custList.size(); i++) {
+					Customer acct1 = CustomerFile.custList.get(i);
+						System.out.println("\n["+(i+1)+"]" + acct1);
+					}
+				System.out.println("Press enter to return.");
 				sc.nextLine();
 				adminMenu(username);
 				break;
-			case 3://cust transaction
+			case 3://customer transactions
 				System.out.println("Please select which account to use. Press 0 to exit.");
 				CustomerFile.findAcctsByUser(custUser);
 				int option4 = Integer.parseInt(sc.nextLine());
@@ -393,6 +403,7 @@ public class Menu {
 							+ "\n2) Deposit"
 							+ "\n3) Withdraw"
 							+ "\n4) Initiate a Transfer"
+							+ "\n"
 							+ "\n0) Exit");
 					int option5 = Integer.parseInt(sc.nextLine());
 					switch(option5) {
@@ -421,7 +432,7 @@ public class Menu {
 					}
 				}
 				break;
-			case 4://cancel cust acct
+			case 4://cancel customer account
 				System.out.println("Please select which account to cancel. Press 0 to exit.");
 				CustomerFile.findAcctsByUser(custUser);
 				int deleteCust = Integer.parseInt(sc.nextLine());
@@ -504,7 +515,7 @@ public class Menu {
 		mainMenu();
 		}
 	
-	public static void approveOrDeny(String username) {
+	public static void approveDeny(String username) {
 		System.out.println("Please select the account to review. Press 0 to exit.");
 		for(int i = 0; i < CustomerFile.acctList.size(); i++) {
 			AccountManager acct = CustomerFile.acctList.get(i);
