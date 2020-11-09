@@ -103,7 +103,6 @@ public class Menu {
 	
 	public static void customerFindAcct(Customer cust) {
 		System.out.println("\nHello " + cust.getFirstName());
-		int acct;
 		if(cust.getAccount()==0) {
 			newAcctMenu(cust);
 		} else {
