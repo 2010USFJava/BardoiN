@@ -182,7 +182,7 @@ public class Menu {
 	public static void employeeLogin() {
 		System.out.println("Employee Login"
 				+ "\n--------------------------------"
-				+ "Please enter your username.");
+				+ "\nPlease enter your username.");
 		String username = sc.nextLine();
 		System.out.println("Please enter your password.");
 		String password = sc.nextLine();
@@ -213,7 +213,6 @@ public class Menu {
 			System.out.println("Please select one of the options displayed below."
 					+ "\n1) View Account Information"
 					+ "\n2) View Customer Information"
-					+ "\n3) Complete Customer Transaction"
 					+ "\n0) Exit");
 			int option2 = Integer.parseInt(sc.nextLine());
 			switch(option2) {
@@ -227,51 +226,13 @@ public class Menu {
 				employeeMenu(username);
 				break;
 			case 2://view cust info
-				cust.toString();
+				for(int i = 0; i < CustomerFile.custList.size(); i++) {
+					Customer acct1 = CustomerFile.custList.get(i);
+						System.out.println("\n["+(i+1)+"]" + acct1);
+					}
 				System.out.println("Press any key to return.");
 				sc.nextLine();
 				employeeMenu(username);
-				break;
-			case 3://cust transaction
-				System.out.println("Please select which account to use. Press 0 to exit.");
-				CustomerFile.findAcctsByUser(custUser);
-				int option3 = Integer.parseInt(sc.nextLine());
-				if(option3==0) {
-					employeeMenu(username);
-				}else {
-					AccountManager acct = CustomerFile.acctList.get(option3-1);
-					System.out.println("What would you like to do?"
-							+ "\n1) Check Account Balance"
-							+ "\n2) Deposit"
-							+ "\n3) Withdraw"
-							+ "\n4) Initiate a Transfer"
-							+ "\n0) Exit");
-					int option4 = Integer.parseInt(sc.nextLine());
-					switch(option4) {
-					case 1://check balance
-						System.out.println("Your current balance is " + df.format(acct.getBalance()));
-						employeeMenu(username);
-						break;
-					case 2://deposit
-						AccountManager.deposit(cust, acct);
-						employeeMenu(username);
-						break;
-					case 3://withdraw
-						AccountManager.withdraw(cust, acct);
-						employeeMenu(username);
-						break;
-					case 4://transfer
-						AccountManager.transfer(cust);
-						employeeMenu(username);
-						break;
-					case 0://Exit
-						employeeMenu(username);
-						break;
-					default:
-						System.out.println("I'm sorry. I don't recognize that option please try again.");
-						employeeMenu(username);
-					}
-				}
 				break;
 			case 0://exit
 				employeeMenu(username);
@@ -402,7 +363,7 @@ public class Menu {
 			System.out.println("Please select one of the options displayed below."
 					+ "\n1) View Account Information"
 					+ "\n2) View Customer Information"
-					+ "\n3) Complete Customer Transaction"
+					+ "\n3) Customer Transaction"
 					+ "\n4) Cancel Customer Account"
 					+ "\n0) Exit");
 			int option3 = Integer.parseInt(sc.nextLine());
