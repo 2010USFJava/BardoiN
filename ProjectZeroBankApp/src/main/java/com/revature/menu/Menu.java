@@ -24,7 +24,7 @@ public class Menu {
 	
 	public static void mainMenu() {
 		System.out.println("\nWelcome to Byte Bank."
-				+ "\nPlease select one of the options displayed below"
+				+ "\nPlease select one of the options displayed below."
 				+ "\n1) Register"
 				+ "\n2) Customer login"
 				+ "\n3) Employee login"
@@ -123,11 +123,10 @@ public class Menu {
 			}else {
 				Customer a = CustomerFile.custList.get(option-1);
 				a.toString();
-				System.out.println(a);
 				int b = CustomerFile.acctList.get(option-1).getAccountNumber();
 				
 				AccountManager acct1 = CustomerFile.findAcctByNumber(b);
-			customerMenu(cust, acct1);
+				customerMenu(cust, acct1);
 			}
 		}
 	}
@@ -140,7 +139,7 @@ public class Menu {
 		
 		System.out.println("\nPlease select one of the options displayed below"
 				+ "\n1) Apply for an account"
-				+ "\n2) Check your account balance"
+				+ "\n2) Check account balance"
 				+ "\n3) Deposit"
 				+ "\n4) Withdraw"
 				+ "\n5) Transfer Funds"
@@ -199,8 +198,8 @@ public class Menu {
 	}
 	public static void employeeMenu(String username) {
 		System.out.println("Please select one of the options displayed below"
-				+ "\n1) Approve or Deny Account Applications"
-				+ "\n2) Assist a Customer"
+				+ "\n1) Approve or Deny Accounts"
+				+ "\n2) Customer Assistance"
 				+ "\n0) Exit");
 		option = Integer.parseInt(sc.nextLine());
 		switch(option) {
@@ -312,7 +311,7 @@ public class Menu {
 	
 	public static void adminMenu(String username) {
 		System.out.println("Please select one of the options displayed below."
-				+ "\n1) Approve or Deny Account Application"
+				+ "\n1) Approve or Deny Accounts"
 				+ "\n2) Manage Employee Accounts"
 				+ "\n3) Manage Customer Accounts"
 				+ "\n0) Exit");
@@ -374,7 +373,7 @@ public class Menu {
 				adminMenu(username);
 				break;
 			case 6://delete admin
-				System.out.println("Please enter the username of the admin you wish to delete:");
+				System.out.println("Please enter the username of the admin you wish to delete.");
 				String adminDelete = sc.nextLine();
 				if(AdminFile.adMap.containsKey(adminDelete)==true) {
 					System.out.println("Are you sure you want to delete " + adminDelete + "? Please confirm by typing yes.");
