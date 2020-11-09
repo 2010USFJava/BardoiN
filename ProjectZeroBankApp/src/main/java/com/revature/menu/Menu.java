@@ -84,9 +84,9 @@ public class Menu {
 	
 
 	public static void customerLogin() {
-		System.out.println(CustomerFile.custList);
-		System.out.println(CustomerFile.acctList);
-		System.out.println("Please enter your username.");
+		System.out.println("Customer Login"
+				+ "\n----------------------------"
+				+ "\nPlease enter your username.");
 		String username = sc.nextLine();
 		System.out.println("Please enter your password.");
 		String password = sc.nextLine();
@@ -182,7 +182,9 @@ public class Menu {
 	}
 	
 	public static void employeeLogin() {
-		System.out.println("Please enter your username.");
+		System.out.println("Employee Login"
+				+ "\n--------------------------------"
+				+ "Please enter your username.");
 		String username = sc.nextLine();
 		System.out.println("Please enter your password.");
 		String password = sc.nextLine();
@@ -292,7 +294,9 @@ public class Menu {
 	}
 	
 	public static void adminLogin() {
-		System.out.println("Please enter your username.");
+		System.out.println("Admin Login"
+				+ "\n------------------------------------"
+				+ "\nPlease enter your username.");
 		String username = sc.nextLine();
 		System.out.println("Please enter your password.");
 		String password = sc.nextLine();
