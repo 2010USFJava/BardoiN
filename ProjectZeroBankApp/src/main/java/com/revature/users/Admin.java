@@ -20,7 +20,7 @@ public class Admin implements Serializable{
 		super();
 		AdminFile.adMap.put(username,password);
 		FileStuff.writeAdminFile(AdminFile.adMap);
-		LogThis.LogIt("info", "A new admin login has been created.");
+		LogThis.LogIt("info", "New admin created.");
 	}
 	
 	public Admin(String username, String password) {
@@ -29,7 +29,7 @@ public class Admin implements Serializable{
 		this.password = password;
 		AdminFile.adMap.put(username,password);
 		FileStuff.writeAdminFile(AdminFile.adMap);
-		LogThis.LogIt("info", "A new admin login has been created.");
+		LogThis.LogIt("info", "New admin created.");
 	}
 	
 	public String getUsername() {

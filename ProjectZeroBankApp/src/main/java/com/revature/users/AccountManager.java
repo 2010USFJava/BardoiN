@@ -101,7 +101,7 @@ public class AccountManager implements Serializable{
 			String dep = sc.nextLine();
 			if(dep.equalsIgnoreCase("yes")) {
 				acct.setBalance(acct.getBalance() + deposit);
-				LogThis.LogIt("info", cust.getFirstName() + " " + cust.getLastName() +" has deposited " + df.format(deposit) + " into account " + acct.getAccountNumber() + ".");
+				LogThis.LogIt("info", cust.getUsername() +" has deposited " + df.format(deposit) + " into account " + acct.getAccountNumber() + ".");
 			} else deposit(cust, acct);
 	}
 	
@@ -118,7 +118,7 @@ public class AccountManager implements Serializable{
 			String withdraw = sc.nextLine();
 			if(withdraw.equalsIgnoreCase("yes")) {
 				acct.setBalance(acct.getBalance() - withdrawal);
-				LogThis.LogIt("info", cust.getFirstName() + " " + cust.getLastName() +" has withdrawn " + df.format(withdrawal) + " from account " + acct.getAccountNumber() + ".");
+				LogThis.LogIt("info", cust.getUsername() +" has withdrawn " + df.format(withdrawal) + " from account " + acct.getAccountNumber() + ".");
 			} else withdraw(cust, acct);
 	}
 	

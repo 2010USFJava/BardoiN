@@ -20,8 +20,8 @@ public class Employee implements Serializable{
 		super();
 		EmployeeFile.empMap.put(username,password);
 		FileStuff.writeEmployeeFile(EmployeeFile.empMap);
-		System.out.println("A new employee login has been created.");
-		LogThis.LogIt("info", "A new employee login has been created.");
+		System.out.println("New employee created.");
+		LogThis.LogIt("info", "New employee created.");
 	}
 	
 	public Employee(String username, String password) {
@@ -30,8 +30,8 @@ public class Employee implements Serializable{
 		this.password = password;
 		EmployeeFile.empMap.put(username,password);
 		FileStuff.writeEmployeeFile(EmployeeFile.empMap);
-		System.out.println("A new employee login has been created.");
-		LogThis.LogIt("info", "A new employee login has been created.");
+		System.out.println("New employee created.");
+		LogThis.LogIt("info", "New employee created.");
 	}
 	
 	public String getUsername() {

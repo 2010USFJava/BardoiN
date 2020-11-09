@@ -1,9 +1,8 @@
-
-[INFO ] 2020-11-09 11:00:33.804 [main] LogThis - A new customer account has been added.
-[INFO ] 2020-11-09 11:00:33.820 [main] LogThis - A new account has been added.
-[INFO ] 2020-11-09 11:00:33.825 [main] LogThis - A new employee login has been created.
-[INFO ] 2020-11-09 11:00:33.828 [main] LogThis - A new admin login has been created.
-[INFO ] 2020-11-09 11:00:40.980 [main] LogThis - A new customer account has been added.
-[INFO ] 2020-11-09 11:00:40.982 [main] LogThis - A new account has been added.
-[INFO ] 2020-11-09 11:00:40.984 [main] LogThis - A new employee login has been created.
-[INFO ] 2020-11-09 11:00:40.986 [main] LogThis - A new admin login has been created.
+[INFO ] 2020-11-09 11:29:35.143 [main] LogThis - New customer account added.
+[INFO ] 2020-11-09 11:29:35.151 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 11:29:35.153 [main] LogThis - New employee created.
+[INFO ] 2020-11-09 11:29:35.154 [main] LogThis - New admin created.
+[INFO ] 2020-11-09 11:29:38.080 [main] LogThis - New customer account added.
+[INFO ] 2020-11-09 11:29:38.085 [main] LogThis - A new account has been added.
+[INFO ] 2020-11-09 11:29:38.087 [main] LogThis - New employee created.
+[INFO ] 2020-11-09 11:29:38.089 [main] LogThis - New admin created.

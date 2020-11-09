@@ -26,7 +26,7 @@ public class Customer implements Serializable{
 		FileStuff.writeCustomerMap(CustomerFile.custMap);
 		CustomerFile.custList.add(this);
 		FileStuff.writeCustomerFile(CustomerFile.custList);
-		LogThis.LogIt("info", "A new customer account has been added.");
+		LogThis.LogIt("info", "New customer account added.");
 	}
 	
 	public Customer(String firstName, String lastName, String address, String username, String password, int accounts) {
@@ -41,7 +41,7 @@ public class Customer implements Serializable{
 		FileStuff.writeCustomerMap(CustomerFile.custMap);
 		CustomerFile.custList.add(this);
 		FileStuff.writeCustomerFile(CustomerFile.custList);
-		LogThis.LogIt("info", "A new customer account has been added.");
+		LogThis.LogIt("info", "New customer account added.");
 	}
 	
 	public String getFirstName() {

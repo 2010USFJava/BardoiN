@@ -30,8 +30,8 @@ public class Testing {
 		accountType checking = accountType.CHECKING;
 		accountType savings = accountType.SAVINGS;
 		accountType joint = accountType.JOINTCHECKING;
-		customer1 = new Customer("First", "Last","address","Username","Password", 1);
-		customer2 = new Customer("First", "Last","address","Username","Password", 2);
+		customer1 = new Customer("first", "last", "1234 Nowhere St., Nowhere, USA 12345", "user", "pass", 2);
+		customer2 = new Customer("first", "last", "1234 Nowhere St., Nowhere, USA 12345", "user", "pass", 1);
 		check = new AccountManager(customer1.getUsername(), null, 345689, checking,true, 125.0);
 		save = new AccountManager(customer1.getUsername(), null, 234554, savings, true, 205.0);
 		jointAcc = new AccountManager(customer1.getUsername(),customer2.getUsername(), 159753, joint, true, 500.0);
