@@ -1,0 +1,101 @@
+
+[INFO ] 2020-11-16 22:39:50.093 [main] LogThis - New customer '1, 0' account added.
+[INFO ] 2020-11-16 22:39:53.540 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 22:44:24.477 [main] LogThis - New customer '2, 0' account added.
+[INFO ] 2020-11-16 22:44:31.968 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 22:48:06.199 [main] LogThis - New customer '2' login.
+[INFO ] 2020-11-16 22:49:01.558 [main] LogThis - New customer '3, 0' account added.
+[INFO ] 2020-11-16 22:49:15.140 [main] LogThis - New customer '3' login.
+[INFO ] 2020-11-16 22:56:43.663 [main] LogThis - New customer '1, 0' account added.
+[INFO ] 2020-11-16 22:56:47.558 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 22:57:13.765 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 22:57:17.164 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-16 22:57:22.025 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:07:02.433 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:10:29.028 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:13:15.178 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:14:53.038 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:16:05.877 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:16:25.308 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-16 23:47:19.767 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:15:25.914 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:34:44.802 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:35:48.394 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:42:11.392 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:45:02.064 [main] LogThis - New customer '1, 0' account added.
+[INFO ] 2020-11-17 00:45:34.647 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:45:38.714 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 00:45:43.055 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:55:49.543 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:59:17.210 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 00:59:56.482 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 01:03:14.881 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 01:05:26.267 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 01:10:39.908 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 01:11:01.134 [main] LogThis - 1 has deposited 50.0 into account 1.
+[INFO ] 2020-11-17 01:11:45.469 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 01:11:55.216 [main] LogThis - 1 has deposited 100.0 into account 1.
+[INFO ] 2020-11-17 13:16:58.026 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:18:24.222 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:36:52.257 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:37:01.505 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:39:44.296 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:39:56.795 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 13:58:10.901 [main] LogThis - New customer '1, User_ID = 0' account added.
+[INFO ] 2020-11-17 13:58:16.632 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:58:22.126 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 13:58:32.291 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 13:58:46.589 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 13:59:54.637 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:05:54.776 [main] LogThis - New customer '1, User_ID = 0' account added.
+[INFO ] 2020-11-17 14:05:58.593 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:06:01.664 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 14:06:05.037 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:06:13.571 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 14:07:04.191 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:22:00.475 [main] LogThis - New customer '1, User_ID = 0' account added.
+[INFO ] 2020-11-17 14:22:07.006 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:36:25.572 [main] LogThis - New customer '1, User_ID = 0' account added.
+[INFO ] 2020-11-17 14:36:29.436 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:36:32.760 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 14:36:35.542 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:36:45.882 [main] LogThis - An account was applied for.
+[INFO ] 2020-11-17 14:43:34.977 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:43:47.644 [main] LogThis - New customer '2, User_ID = 0' account added.
+[INFO ] 2020-11-17 14:43:51.530 [main] LogThis - New customer '2' login.
+[INFO ] 2020-11-17 14:51:22.299 [main] LogThis - New customer '1, User_ID = 0' account added.
+[INFO ] 2020-11-17 14:52:51.281 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:55:06.394 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:55:10.378 [main] LogThis - An account, Account ID = 0 was applied for.
+[INFO ] 2020-11-17 14:55:18.932 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 14:57:14.817 [main] LogThis - 1 has deposited $50.0 into account 1.
+[INFO ] 2020-11-17 15:03:52.912 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:04:16.206 [main] LogThis - An account, Account ID = 0 was applied for.
+[INFO ] 2020-11-17 15:04:21.439 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:08:04.739 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:09:24.996 [main] LogThis - 1 has deposited $50.0 into account 2.
+[INFO ] 2020-11-17 15:09:42.183 [main] LogThis - 1 has withdrawn $50.0 from account 2.
+[INFO ] 2020-11-17 15:24:20.284 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:27:35.007 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:35:18.051 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:36:16.197 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:36:55.073 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:37:04.824 [main] LogThis - A new SAVINGS account was applied for.
+[INFO ] 2020-11-17 15:37:07.565 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:51:32.753 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:54:46.934 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 15:59:10.379 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:02:08.062 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:04:04.977 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:06:19.946 [main] LogThis - 1 has logged out.
+[INFO ] 2020-11-17 16:06:22.837 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:07:22.660 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:10:22.478 [main] LogThis - New customer '1, User_ID = 0' account added.
+[INFO ] 2020-11-17 16:12:02.195 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:12:05.212 [main] LogThis - A new CHECKING account was applied for.
+[INFO ] 2020-11-17 16:12:07.443 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:12:21.098 [main] LogThis - A new SAVINGS account was applied for.
+[INFO ] 2020-11-17 16:12:23.201 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 16:12:36.475 [main] LogThis - 1 has deposited $50.0 into account 1.
+[INFO ] 2020-11-17 16:12:53.119 [main] LogThis - 1 has withdrawn $50.0 from account 1.
+[INFO ] 2020-11-17 16:13:05.061 [main] LogThis - New customer '1' login.
