@@ -99,3 +99,25 @@
 [INFO ] 2020-11-17 16:12:36.475 [main] LogThis - 1 has deposited $50.0 into account 1.
 [INFO ] 2020-11-17 16:12:53.119 [main] LogThis - 1 has withdrawn $50.0 from account 1.
 [INFO ] 2020-11-17 16:13:05.061 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 20:12:47.359 [main] LogThis - New customer account '1' added.
+[INFO ] 2020-11-17 21:03:08.896 [main] LogThis - New customer account '1' added.
+[INFO ] 2020-11-17 21:03:16.443 [main] LogThis - New customer '`' login.
+[INFO ] 2020-11-17 21:03:31.749 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 21:03:36.616 [main] LogThis - A new CHECKING account was applied for.
+[INFO ] 2020-11-17 21:03:38.999 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 21:03:54.284 [main] LogThis - 1 has deposited $50.0 into account 1.
+[INFO ] 2020-11-17 21:04:02.195 [main] LogThis - 1 has logged out.
+[INFO ] 2020-11-17 22:05:56.395 [main] LogThis - New customer account '1' added.
+[INFO ] 2020-11-17 22:05:59.280 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 22:06:01.593 [main] LogThis - A new CHECKING account was applied for.
+[INFO ] 2020-11-17 22:06:03.669 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 22:06:11.547 [main] LogThis - A new SAVINGS account was applied for.
+[INFO ] 2020-11-17 22:06:13.464 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 22:06:40.138 [main] LogThis - 1 has deposited $50.0 into account 2.
+[INFO ] 2020-11-17 22:06:46.218 [main] LogThis - 1 has logged out.
+[INFO ] 2020-11-17 22:19:57.176 [main] LogThis - A new 1 account was deleted.
+[INFO ] 2020-11-17 22:21:44.686 [main] LogThis - New customer '1' login.
+[INFO ] 2020-11-17 22:21:59.302 [main] LogThis - 1 has withdrawn $50.0 from account 2.
+[INFO ] 2020-11-17 22:22:01.836 [main] LogThis - 1 has logged out.
+[INFO ] 2020-11-17 22:22:46.366 [main] LogThis - A new 2 account was deleted.
+[INFO ] 2020-11-17 22:22:59.362 [main] LogThis - Customer account, with cust ID = 1 was deleted.

@@ -16,6 +16,7 @@ import java.util.Scanner;
 
 import com.revature.daoimpl.AccountsDaoImpl;
 import com.revature.daoimpl.CustomerDaoImpl;
+import com.revature.exceptions.InvalidInput;
 import com.revature.users.Accounts;
 import com.revature.users.Accounts.accountType;
 import com.revature.users.Admin;
@@ -28,9 +29,12 @@ public class Menu {
 	static DecimalFormat df = new DecimalFormat("#.00");
 	
 	static Scanner sc = new Scanner(System.in);
+	private static Customer cust1;
 	
 	public static void mainMenu() throws SQLException, IOException{
-		System.out.println("\nWelcome to Byte Bank."
+		System.out.println("\n-----------------------------"
+				+ "\nWelcome to Byte Bank."
+				+ "\n-----------------------------"
 				+ "\nPlease select one of the options displayed below."
 				+ "\n1) Register"
 				+ "\n2) Customer login"
@@ -50,11 +54,11 @@ public class Menu {
 			adminLogin();
 			break;
 		case 0: //exit
-			System.out.println("Thank you for stopping by Byte Bank. Have a good day!");
+			System.out.println("\nThank you for stopping by Byte Bank. Have a good day!");
 			System.exit(0);
 			break;
 		default:
-			System.out.println("I'm sorry. I don't recognize that option please try again.");
+			System.out.println("\nI'm sorry. I don't recognize that option please try again.");
 			mainMenu();
 		}
 		
@@ -74,7 +78,7 @@ public class Menu {
 		System.out.println("Please enter your state.");
 		String state = sc.nextLine();
 		System.out.println("Please enter your zipcode.");
-		int zipcode = Integer.parseInt(sc.nextLine());
+		String zipcode = sc.nextLine();
 		System.out.println("Please enter your email address.");
 		String email = sc.nextLine();
 		System.out.println("Please enter your phone number.");
@@ -84,7 +88,7 @@ public class Menu {
 		System.out.println("Please create a password.");
 		String password = sc.nextLine();
 		
-		Customer cust = new Customer(0, firstName, lastName, address, city, state, zipcode, email, phone, username, password);
+		Customer cust = new Customer(0, firstName, lastName, address, email, phone, username, password);
 		
 		try {
 			cdi.createCustomer(cust);
@@ -96,7 +100,7 @@ public class Menu {
 		} catch (SQLException e) {
 			System.out.println("Username already exists");
 			System.out.println("Could not create Account and add to database\nPlease try again later");
-			e.printStackTrace();
+			mainMenu();
 		}
 			mainMenu();
 
@@ -120,7 +124,6 @@ public class Menu {
 			customerFindAcct(cust);
 			
 		} catch (SQLException e) {
-		e.printStackTrace();
 		customerLogin();
 		}
 	}
@@ -215,7 +218,8 @@ public class Menu {
 				System.out.println("You cannot withdraw an amount greater than your current balance of $" + prevBal + "."
 						+ "\nReturning to the customer menu....");
 				customerMenu(acct);
-			}else System.out.println("Do you want to withdraw $" + withdraw +"? Please type 'yes' to confirm."); {
+			}else 
+				System.out.println("Do you want to withdraw $" + withdraw +"? Please type 'yes' to confirm."); {
 				String dep = sc.nextLine();
 				if(dep.equalsIgnoreCase("yes")) {
 					adi.withdraw(acct, withdraw);
@@ -326,8 +330,6 @@ public class Menu {
 		
 		AccountsDaoImpl adi = new AccountsDaoImpl();
 		
-		System.out.println(cust.toString());
-		
 		int custID = cust.getUser_id();
 		
 		List<Accounts> acctList = (ArrayList<Accounts>)adi.getAllAccounts(cust);
@@ -340,7 +342,8 @@ public class Menu {
 			newAcctMenu(cust);
 		} else {
 			System.out.println("Your accounts are displayed below. Please enter the Account ID of the account you would like to access."
-					+ "\nPress 0 to exit.");
+					+ "\nPress 0 to exit."
+					+ "\nPress 1 to continue.");
 						
 			for(int i = 0; i < acctList.size(); i++) {
 				Accounts acct1 = acctList.get(i);
@@ -412,14 +415,21 @@ public class Menu {
 			adminMenu();
 		}
 		else {
-		System.out.println("This username/password combination was not found. Please try again.");
-			adminLogin();
+		System.out.println("This username/password combination was not found. Please try again."
+				+ "\nRedirecting to main menu...");
+			mainMenu();
 			}
 		}
 
 	
 	public static void adminMenu() throws SQLException, IOException {
-		System.out.println("Please select one of the options displayed below."
+		CustomerDaoImpl cdi = new CustomerDaoImpl();
+		
+		int custID = 0;
+		
+		Customer cust = null;
+		
+		System.out.println("\nPlease select one of the options displayed below."
 				+ "\n1) View Customer Accounts"
 				+ "\n2) Create a new Customer Account"
 				+ "\n3) Update a Customer Account"
@@ -429,18 +439,271 @@ public class Menu {
 		option = Integer.parseInt(sc.nextLine());
 		switch(option) {
 		case 1: //view customer accounts
+			
+			List<Customer> custList = (ArrayList<Customer>)cdi.getAllCustomers();
+			
+			int numOfCusts = custList.size();
+			
+			System.out.println("\nAll customer accounts are displayed below."
+					+ "\nPress 0 to return to the admin menu.");
+						
+			for(int i = 0; i < custList.size(); i++) {
+					cust = custList.get(i);
+					System.out.println("\n["+(i+1)+"]" + cust);
+			}
+			
+			option = Integer.parseInt(sc.nextLine());
+			if(option==0) {
+				System.out.println("\nYou are being redirected to the admin menu.");
+				adminMenu();
+			}
+			
 			break;
 		case 2: //create a new customer account
+			System.out.println("\nCreate a new Customer Account"
+					+ "\n--------------------------------");
+			
+			System.out.println("\nPlease enter your first name.");
+			String firstName = sc.nextLine();
+			System.out.println("Please enter your last name");
+			String lastName = sc.nextLine();
+			System.out.println("Please enter your street address.");
+			String address = sc.nextLine();
+			System.out.println("Please enter your city.");
+			String city = sc.nextLine();
+			System.out.println("Please enter your state.");
+			String state = sc.nextLine();
+			System.out.println("Please enter your zipcode.");
+			String zipcode = sc.nextLine();
+			System.out.println("Please enter your email address.");
+			String email = sc.nextLine();
+			System.out.println("Please enter your phone number.");
+			String phone = sc.nextLine();
+			System.out.println("Please create a username.");
+			String username = sc.nextLine();
+			System.out.println("Please create a password.");
+			String password = sc.nextLine();
+			
+			cust = new Customer(0, firstName, lastName, address, email, phone, username, password);
+			
+			try {
+				cdi.createCustomer(cust);
+				System.out.println("Account Created! \nPlease have customer login with the username and password");
+				System.out.println();
+				
+				LogThis.LogIt("info", "New customer account '" + cust.getUsername() + "' added.");
+
+			} catch (SQLException e) {
+				System.out.println("Could not create Account and add to database\nPlease try again later");
+				mainMenu();
+			}
+				adminMenu();
 			break;
 		case 3: //update customer account
+			System.out.println("\nUpdate a Customer Account"
+					+ "\n--------------------------------");
+			try {
+				updateCustbyAdmin();
+			} catch(InvalidInput e) {
+				adminMenu();
+			}
+			adminMenu();
 			break;
 		case 4: //delete customer account
+			System.out.println("\nDelete Customer Account"
+					+ "\n--------------------------------");
+			try {
+				deleteCust();
+			} catch(InvalidInput e) {
+				adminMenu();
+			}
+			adminMenu();
 			break;
 		case 0: //exit
+			mainMenu();
 			break;
 		default:
 			mainMenu();
-		
 		}
+	}
+
+	
+	public static void updateCustbyAdmin() throws SQLException, IOException {
+		CustomerDaoImpl cdi = new CustomerDaoImpl();
+		
+		int custID = 0;
+		
+		String conf = null;
+		
+		Customer cust = null;
+		String newVal = null;
+		
+		System.out.println("\nPlease enter the customer account number.");
+		custID = Integer.parseInt(sc.nextLine());
+		cust = cdi.getCustomerInfobyID(custID);
+		System.out.println(cdi.getCustomerInfobyID(custID).toString());
+		
+		System.out.println("\nEnter one field you would like to change."
+				+ "\nYou can change the following fields: first name, last name, address, email address, and phone number.");
+		String column = sc.nextLine().toLowerCase();
+		
+		switch(column) {
+		case "first name":
+			System.out.println("\nEnter the new value for the field = " + column);
+			newVal = sc.nextLine();
+			
+			System.out.println(cdi.updateFirstNamebyID(newVal, custID).toString());
+			
+			System.out.println("\nWould you like to update another field? Please type 'yes' to confirm.");
+			conf = sc.nextLine();
+			if(conf.equalsIgnoreCase("yes")) {
+				updateCustbyAdmin();
+			} else adminMenu();
+			
+			break;
+		case "last name":
+			System.out.println("\nEnter the new value for the field = " + column);
+			newVal = sc.nextLine();
+			
+			System.out.println(cdi.updateLastNamebyID(newVal, custID).toString());
+			
+			System.out.println("\nWould you like to update another field? Please type 'yes' to confirm.");
+			conf = sc.nextLine();
+			if(conf.equalsIgnoreCase("yes")) {
+				updateCustbyAdmin();
+			} else adminMenu();
+			break;
+		case "address":
+			System.out.println("\nEnter the new value for the field = " + column);
+			newVal = sc.nextLine();
+			
+			System.out.println(cdi.updateAddressbyID(newVal, custID).toString());
+			
+			System.out.println("\nWould you like to update another field? Please type 'yes' to confirm.");
+			conf = sc.nextLine();
+			if(conf.equalsIgnoreCase("yes")) {
+				updateCustbyAdmin();
+			} else adminMenu();
+			break;
+		case "email address":
+			System.out.println("\nEnter the new value for the field = " + column);
+			newVal = sc.nextLine();
+			
+			System.out.println(cdi.updateEmailbyID(newVal, custID).toString());
+			
+			System.out.println("\nWould you like to update another field? Please type 'yes' to confirm.");
+			conf = sc.nextLine();
+			if(conf.equalsIgnoreCase("yes")) {
+				updateCustbyAdmin();
+			} else adminMenu();
+			break;	
+		case "phone number":
+			System.out.println("\nEnter the new value for the field = " + column);
+			newVal = sc.nextLine();
+			
+			System.out.println(cdi.updatePhonebyID(newVal, custID).toString());
+			
+			System.out.println("\nWould you like to update another field? Please type 'yes' to confirm.");
+			conf = sc.nextLine();
+			if(conf.equalsIgnoreCase("yes")) {
+				updateCustbyAdmin();
+			} else adminMenu();
+			break;
+		default:
+			adminMenu();
+		}
+		LogThis.LogIt("info", "New customer account '" + cust.getUsername() + "' added.");
+	}
+	
+	public static void deleteCust() throws SQLException, IOException {
+		
+		CustomerDaoImpl cdi = new CustomerDaoImpl();
+		
+		int custID = 0;
+		
+		Customer cust = null;
+		
+		List<Customer> custList = (ArrayList<Customer>)cdi.getAllCustomers();
+		
+		int numOfCusts = custList.size();
+		
+		if(numOfCusts == 0) {
+		System.out.println("There are no customer accounts."
+				+ "\nRedirecting to the admin menu...");
+		adminMenu();
+		}
+		
+		System.out.println("\nAll customer accounts are displayed below."
+				+ "\nPress 0 to return to the admin menu. Please enter the USER_ID of the Customer you would like to delete.");
+					
+		for(int i = 0; i < custList.size(); i++) {
+				cust = custList.get(i);
+				System.out.println("\n["+(i+1)+"]" + cust);
+		}
+		
+		custID = Integer.parseInt(sc.nextLine());
+		if(custID==0) {
+			System.out.println("\nYou are being redirected to the admin menu.");
+			adminMenu();
+		} else {
+			
+			deleteCust1(custID);
+			
+			}
+		}
+		
+	
+	public static void deleteCust1(int custID) throws SQLException, IOException {
+		Customer cust = null;
+		CustomerDaoImpl cdi = new CustomerDaoImpl();
+		
+		cust = cdi.getCustomerInfobyID(custID);
+		
+		AccountsDaoImpl adi = new AccountsDaoImpl();
+		Accounts acct = null;
+		
+		List<Accounts> acctList = (ArrayList<Accounts>)adi.getAllAccounts(cust);
+		
+		int accts = acctList.size();
+		
+		if(accts==0) {
+			System.out.println("\nCustomer has no accounts."
+					+ "\nCustomer will be deleted."
+					+ "\nRedirecting to admin menu.....");
+			LogThis.LogIt("info", "Customer account, with cust ID = " + custID + " was deleted.");
+			cdi.deleteCust(custID);
+			
+			adminMenu();
+			
+		} else {
+			
+			System.out.println("\nCustomer has " + accts + " account(s). Account(s) must be deleted."
+					+ "\nYour accounts are displayed below. Please enter the BANK_ACCOUNT_ID of the account you would like to delete."
+					+ "\nPress 0 to exit.");
+						
+			for(int i = 0; i < acctList.size(); i++) {
+				Accounts acct1 = acctList.get(i);
+					System.out.println("\n["+(i+1)+"]" + acct1);
+				}
+		option = Integer.parseInt(sc.nextLine());
+		 acct = adi.getAccountbyID(option);
+		
+		System.out.println("\n"
+				+ "\nSelected Account with ID = "+ acct.getBankAccountID());
+		
+		double balance = adi.getBalance(acct);
+		
+		if(balance == 0.0) {
+				System.out.println("\nAccount Deleted. You are being redirected to the customer delete page.");
+				LogThis.LogIt("info", "A new " + acct.getBankAccountID() + " account was deleted.");
+					adi.deleteCustAcct(acct);
+				//	accts = accts - 1;
+				deleteCust();		
+		}else {
+				System.out.println("\nCannot delete account because account is not empty."
+						+ "\nReturning to admin menu...");
+				adminMenu();
+			}
+	}
 	}
 }

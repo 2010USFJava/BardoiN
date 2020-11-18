@@ -19,9 +19,6 @@ public class Customer implements Serializable{
 	private String firstName;
 	private String lastName;
 	private String address;
-	private String city;
-	private String state;
-	private int zipcode;
 	private String email;
 	private String phone;
 	private String username;
@@ -31,16 +28,13 @@ public class Customer implements Serializable{
 		super();
 	}
 	
-	public Customer(int user_id, String firstName, String lastName, String address, String city, String state, int zipcode, String email, String phone, String username, String password) {
+	public Customer(int user_id, String firstName, String lastName, String address, String email, String phone, String username, String password) {
 		super();
 		
 		this.user_id = user_id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
-		this.city = city;
-		this.state = state;
-		this.zipcode = zipcode;
 		this.email = email;
 		this.phone = phone;
 		this.username = username;
@@ -94,31 +88,6 @@ public class Customer implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
-	
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
-	
-	public int getZipcode() {
-		return zipcode;
-	}
-
-	public void setZipcode(int zipcode) {
-		this.zipcode = zipcode;
-	}
 
 	public String getEmail() {
 		return email;
@@ -144,9 +113,6 @@ public class Customer implements Serializable{
 				+ "\nFirst Name = " + firstName
 				+ "\nLast Name = " + lastName
 				+ "\nAddress = " + address
-				+ "\nCity = " + city
-				+ "\nState = " + state
-				+ "\nZip Code = " + zipcode
 				+ "\nEmail Address = " + email
 				+ "\nPhone Number = " + phone
 				+ "\nUsername = " + username
