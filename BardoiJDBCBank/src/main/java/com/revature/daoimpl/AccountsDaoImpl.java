@@ -44,17 +44,17 @@ public class AccountsDaoImpl implements AccountsDao{
 
 		Accounts a = null;
 		while(rs.next()) {
-			a= new Accounts(rs.getInt(1),rs.getInt(2), accountType.valueOf(rs.getString(3)), rs.getDouble(4));
+			a = new Accounts(rs.getInt(1),rs.getInt(2), accountType.valueOf(rs.getString(3)), rs.getDouble(4));
 			acctList.add(a);
 		}
 		return acctList;
 	}
 	
-	public Accounts getAccountbyID(int option) throws SQLException {
+	public Accounts getAccountbyID(int acctID) throws SQLException {
 		Connection conn = cf.getConnection();
 		String sql = "select * from \"Accounts\" where \"BANK_ACCOUNT_ID\"= ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, option);
+		ps.setInt(1, acctID);
 		ResultSet rs = ps.executeQuery();
 		
 		Accounts a = null;

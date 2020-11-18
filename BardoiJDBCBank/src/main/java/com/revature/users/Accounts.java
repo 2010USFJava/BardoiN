@@ -70,7 +70,7 @@ public class Accounts implements Serializable{
 	public void setAccountType(accountType type) {
 		this.type = type;
 	}
-	public double getBalance() {
+	public double getBal() {
 		return balance;
 	}
 	public void setBalance(double balance) {

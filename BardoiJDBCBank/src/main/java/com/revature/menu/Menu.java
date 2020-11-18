@@ -239,6 +239,7 @@ public class Menu {
 			deleteAcct(acct);
 			break;
 		case 7: //switch account
+			int acctID = 0;
 			List<Accounts> acctList = (ArrayList<Accounts>)adi.getAllAccounts(cust);
 			
 			System.out.println("Your accounts are displayed below. Please enter the Account ID of the account you would like to access."
@@ -249,15 +250,15 @@ public class Menu {
 					System.out.println("\n["+(i+1)+"]" + acct1);
 			}
 
-			option = Integer.parseInt(sc.nextLine());
-			if(option==0) {
+			acctID = Integer.parseInt(sc.nextLine());
+			if(acctID==0) {
 				System.out.println("Thank you for stopping by Byte Bank. Have a good day!"
 						+ "\n"
 						+ "\nYou are being redirected to the main menu.");
 				customerMenu(acct);
 			}else {
 				
-				Accounts acct1 = adi.getAccountbyID(option);
+				Accounts acct1 = adi.getAccountbyID(acctID);
 				customerMenu(acct1);
 				
 			}
@@ -325,6 +326,7 @@ public class Menu {
 
 	
 	public static void customerFindAcct(Customer cust) throws SQLException, IOException {
+		int acctID = 0;
 		
 		CustomerDaoImpl cdi = new CustomerDaoImpl();
 		
@@ -350,15 +352,15 @@ public class Menu {
 					System.out.println("\n["+(i+1)+"]" + acct1);
 			}
 
-			option = Integer.parseInt(sc.nextLine());
-			if(option==0) {
+			acctID = Integer.parseInt(sc.nextLine());
+			if(acctID==0) {
 				System.out.println("Thank you for stopping by Byte Bank. Have a good day!"
 						+ "\n"
 						+ "\nYou are being redirected to the main menu.");
 				mainMenu();
 			}else {
 				
-				Accounts acct = adi.getAccountbyID(option);
+				Accounts acct = adi.getAccountbyID(acctID);
 				customerMenu(acct);
 			}
 			}
@@ -654,6 +656,7 @@ public class Menu {
 		
 	
 	public static void deleteCust1(int custID) throws SQLException, IOException {
+		int acctID = 0;
 		Customer cust = null;
 		CustomerDaoImpl cdi = new CustomerDaoImpl();
 		
@@ -685,8 +688,8 @@ public class Menu {
 				Accounts acct1 = acctList.get(i);
 					System.out.println("\n["+(i+1)+"]" + acct1);
 				}
-		option = Integer.parseInt(sc.nextLine());
-		 acct = adi.getAccountbyID(option);
+		acctID = Integer.parseInt(sc.nextLine());
+		 acct = adi.getAccountbyID(acctID);
 		
 		System.out.println("\n"
 				+ "\nSelected Account with ID = "+ acct.getBankAccountID());
