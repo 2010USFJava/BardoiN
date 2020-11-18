@@ -316,8 +316,8 @@ public class Menu {
 		}
 		
 		LogThis.LogIt("info", "A new " + acct.getType() + " account was applied for.");
-		System.out.println("\n You are being redirected to the customer login.");
-		customerLogin();
+		System.out.println("\n You are being redirected to the main menu.");
+		mainMenu();
 		}
 
 	
@@ -379,10 +379,10 @@ public class Menu {
 					+ "\nWould you like to delete this account? Please type 'yes' to confirm.");
 			String opt = sc.nextLine();
 			if(opt.equalsIgnoreCase("yes")) {
-				System.out.println("\nAccount Deleted. You are being redirected to the customer login.");
+				System.out.println("\nAccount Deleted. You are being redirected to the main menu.");
 				LogThis.LogIt("info", "Account, ID = " + acct.getBankAccountID() + " was deleted.");
 					adi.deleteCustAcct(acct);
-				customerLogin();
+				mainMenu();
 				}else {
 					System.out.println("\nInvalid answer. Returning to customer menu....");
 					customerMenu(acct);
@@ -699,7 +699,7 @@ public class Menu {
 		double balance = adi.getBalance(acct);
 		
 		if(balance == 0.0) {
-				System.out.println("\nAccount Deleted. You are being redirected to the customer delete page.");
+				System.out.println("\nAccount Deleted. You are being redirected...");
 				LogThis.LogIt("info", "A new " + acct.getBankAccountID() + " account was deleted.");
 					adi.deleteCustAcct(acct);
 				//	accts = accts - 1;
