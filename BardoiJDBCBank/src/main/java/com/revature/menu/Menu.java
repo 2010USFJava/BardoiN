@@ -29,7 +29,6 @@ public class Menu {
 	static DecimalFormat df = new DecimalFormat("#.00");
 	
 	static Scanner sc = new Scanner(System.in);
-	private static Customer cust1;
 	
 	public static void mainMenu() throws SQLException, IOException{
 		System.out.println("\n-----------------------------"
@@ -71,14 +70,8 @@ public class Menu {
 		String firstName = sc.nextLine();
 		System.out.println("Please enter your last name");
 		String lastName = sc.nextLine();
-		System.out.println("Please enter your street address.");
+		System.out.println("Please enter your address.");
 		String address = sc.nextLine();
-		System.out.println("Please enter your city.");
-		String city = sc.nextLine();
-		System.out.println("Please enter your state.");
-		String state = sc.nextLine();
-		System.out.println("Please enter your zipcode.");
-		String zipcode = sc.nextLine();
 		System.out.println("Please enter your email address.");
 		String email = sc.nextLine();
 		System.out.println("Please enter your phone number.");
@@ -134,11 +127,14 @@ public class Menu {
 			AccountsDaoImpl adi = new AccountsDaoImpl();
 			
 			int custID = acct.getUser_id();
+			
 			int exitOpt = 0;
+			
+			Accounts a = null;
 			
 			Customer cust = cdi.getCustomerInfobyID(custID);
 			
-		System.out.println("\nHello " + cust.getFirstName());
+		System.out.println("\nHello " + cust.getFirstName() + ".");
 		
 		System.out.println("\nPlease select one of the options displayed below"
 				+ "\n1) View Customer Info"
@@ -173,8 +169,9 @@ public class Menu {
 			newAcctMenu(cust);
 			break;
 		case 3://view account info
+			a = adi.getAccountbyID(acct.getBankAccountID());
 			System.out.println("Account Info:"
-					+ "\n" + acct.toString());
+					+ "\n" + a.toString());
 			
 			System.out.println("\nPress 0 to return to the customer menu.");
 			exitOpt = Integer.parseInt(sc.nextLine());
@@ -312,7 +309,6 @@ public class Menu {
 			type = accountType.SAVINGS;
 			acct = new Accounts(0, custID, type, 0.0);
 			adi.createAccount(acct);
-			
 			break;
 		default: 
 			System.out.println("I'm sorry.I don't recognize that option please try again.");
@@ -338,14 +334,13 @@ public class Menu {
 		
 		int accts = acctList.size();
 		
-		System.out.println("\nHello " + cust.getFirstName());
+		System.out.println("\nHello " + cust.getFirstName() + ".");
 		if(accts==0) {
 			System.out.println("You have no accounts.");
 			newAcctMenu(cust);
 		} else {
 			System.out.println("Your accounts are displayed below. Please enter the Account ID of the account you would like to access."
-					+ "\nPress 0 to exit."
-					+ "\nPress 1 to continue.");
+					+ "\nPress 0 to exit.");
 						
 			for(int i = 0; i < acctList.size(); i++) {
 				Accounts acct1 = acctList.get(i);
@@ -369,20 +364,23 @@ public class Menu {
 	public static void deleteAcct(Accounts acct) throws SQLException, IOException {
 		
 		AccountsDaoImpl adi = new AccountsDaoImpl();
+		
+		Accounts a = adi.getAccountbyID(acct.getBankAccountID());
 				
 		System.out.println("\n"
-				+ "\nCurrent Account"+ acct.toString());
+				+ "\nCurrent Account"+ a.toString());
 		
 		double balance = adi.getBalance(acct);
 		
 		if(balance == 0.0) {
-			System.out.println("This account has a balance of " + balance +".");
+			System.out.println("This account has a balance of " + balance +"."
+					+ "\nYou can delete this account.");
 			System.out.println("\n"
 					+ "\nWould you like to delete this account? Please type 'yes' to confirm.");
 			String opt = sc.nextLine();
 			if(opt.equalsIgnoreCase("yes")) {
 				System.out.println("\nAccount Deleted. You are being redirected to the customer login.");
-				LogThis.LogIt("info", "A new " + acct.getBankAccountID() + " account was deleted.");
+				LogThis.LogIt("info", "Account, ID = " + acct.getBankAccountID() + " was deleted.");
 					adi.deleteCustAcct(acct);
 				customerLogin();
 				}else {
@@ -445,7 +443,11 @@ public class Menu {
 			List<Customer> custList = (ArrayList<Customer>)cdi.getAllCustomers();
 			
 			int numOfCusts = custList.size();
-			
+			if(numOfCusts==0) {
+				System.out.println("\nThere are no customer accounts to display."
+						+ "\nRedirecting to the admin menu....");
+				adminMenu();
+			} else {
 			System.out.println("\nAll customer accounts are displayed below."
 					+ "\nPress 0 to return to the admin menu.");
 						
@@ -459,7 +461,7 @@ public class Menu {
 				System.out.println("\nYou are being redirected to the admin menu.");
 				adminMenu();
 			}
-			
+		}
 			break;
 		case 2: //create a new customer account
 			System.out.println("\nCreate a new Customer Account"
